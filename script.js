@@ -1,6 +1,11 @@
 
 let computerChoice = computerPlay();
-let playerChoice = "Rock"
+let playerChoice = playerPlay();
+
+function playerPlay(){
+    let choice = prompt("Rock, Paper or Scissors?").toLowerCase();
+    return choice.charAt(0).toUpperCase() + choice.slice(1);
+}
 
 function computerPlay(){
     let options = ["Rock", "Paper", "Scissors"];
@@ -32,4 +37,6 @@ function playRound(playerChoice, computerChoice){
 }
 
 console.clear();
+console.log("You chose: " + playerChoice);
+console.log("Computer chose: " + computerChoice);
 console.log(playRound(playerChoice, computerChoice));
