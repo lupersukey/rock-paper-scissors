@@ -76,30 +76,55 @@ function computerTurn() {
 
 function playRound(playerChoice, computerChoice) {
     if (playerChoice == "melee" && computerChoice == "ranged") {
-        document.getElementById("roundDesc").innerHTML = "Impressive attack! the enemy lost one life, Ranged is no match for Melee";
+        document.getElementById("roundDesc").innerHTML = "Impressive attack! the enemy lost one life.";
         computerLives--;
     } else if (playerChoice == "melee" && computerChoice == "magic") {
-        document.getElementById("roundDesc").innerHTML = "Unfortunate defeat.. You lost one life, Melee is no match for Magic";
+        document.getElementById("roundDesc").innerHTML = "Unfortunate defeat.. You lost one life.";
         playerLives--;
     }
 
     if (playerChoice == "ranged" && computerChoice == "magic") {
-        document.getElementById("roundDesc").innerHTML = "Impressive attack! the enemy lost one life, Magic is no match for Ranged";
+        document.getElementById("roundDesc").innerHTML = "Impressive attack! the enemy lost one life.";
         computerLives--;
     } else if (playerChoice == "ranged" && computerChoice == "melee") {
-        document.getElementById("roundDesc").innerHTML = "Unfortunate defeat.. You lost one life, Ranged is no match for Melee";
+        document.getElementById("roundDesc").innerHTML = "Unfortunate defeat.. You lost one life.";
         playerLives--;
     }
 
     if (playerChoice == "magic" && computerChoice == "melee") {
-        document.getElementById("roundDesc").innerHTML = "Impressive attack! the enemy lost one life, Melee is no match for Magic";
+        document.getElementById("roundDesc").innerHTML = "Impressive attack! the enemy lost one life.";
         computerLives--;
     } else if (playerChoice == "magic" && computerChoice == "ranged") {
-        document.getElementById("roundDesc").innerHTML = "Unfortunate defeat.. You lost one life, Magic is no match for Ranged";
+        document.getElementById("roundDesc").innerHTML = "Unfortunate defeat.. You lost one life.";
         playerLives--;
     }
 
     if (playerChoice === computerChoice) {
-        document.getElementById("roundDesc").innerHTML = "Hmm.. You and your enemy drew the same weapon, so no lives were lost. Try again!";
+        document.getElementById("roundDesc").innerHTML = "Hmm.. A draw, no lives were lost. Try again!";
     }
 }
+
+function choseWinner() {
+    if (playerLives == 0 || computerLives == 0) {
+        if (playerLives == 0) {
+            document.getElementById("roundDesc").innerHTML = "Oh dear.. No lives left for you.";
+            document.getElementById("declareWinner").innerHTML = "You lost this battle!";
+        } else {
+            document.getElementById("roundDesc").innerHTML = "Nice! The poor enemy has no lioves left.";
+            document.getElementById("declareWinner").innerHTML = "You won this battle!";
+        }
+    }
+}
+
+const buttons = document.querySelectorAll("a");
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        let playerChoice = button.id;
+        let computerChoice = computerTurn();
+        document.getElementById("computersWeaponImg").src = "images/" + computerChoice + ".png";
+        playRound(playerChoice, computerChoice);
+        round++;
+        document.getElementById("roundCount").innerHTML = "Round: " + round;
+        document.getElementById("livesCount").innerHTML = "Your Lives: " + playerLives + " | Enemy's Lives: " + computerLives;
+    })
+})
