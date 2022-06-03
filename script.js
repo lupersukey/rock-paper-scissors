@@ -110,9 +110,12 @@ function choseWinner() {
             document.getElementById("roundDesc").innerHTML = "Oh dear.. No lives left for you.";
             document.getElementById("declareWinner").innerHTML = "You lost this battle!";
         } else {
-            document.getElementById("roundDesc").innerHTML = "Nice! The poor enemy has no lioves left.";
+            document.getElementById("roundDesc").innerHTML = "Nice! The poor enemy has no lives left.";
             document.getElementById("declareWinner").innerHTML = "You won this battle!";
         }
+        document.getElementById("melee").style.pointerEvents = "none";
+        document.getElementById("ranged").style.pointerEvents = "none";
+        document.getElementById("magic").style.pointerEvents = "none";
     }
 }
 
@@ -126,5 +129,6 @@ buttons.forEach((button) => {
         round++;
         document.getElementById("roundCount").innerHTML = "Round: " + round;
         document.getElementById("livesCount").innerHTML = "Your Lives: " + playerLives + " | Enemy's Lives: " + computerLives;
+        choseWinner();
     })
 })
