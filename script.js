@@ -61,5 +61,10 @@ if (playerScore == 5){
     console.log("Unlucky, the computer has defeated you!");
 }
 */
-/*let round = 0;
-document.getElementById("roundCount").innerHTML = "Round: " + round;*/
+let round = 0;
+let playerLives = 5;
+let computerLives = 5;
+
+document.getElementById("roundCount").innerHTML = "Round: " + round;
+document.getElementById("livesCount").innerHTML = "Your Lives: " + playerLives + " | Enemy's Lives: " + computerLives;
+document.getElementById("roundDesc").innerHTML = "Try me if you dare!";
