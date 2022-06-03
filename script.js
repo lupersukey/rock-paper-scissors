@@ -1,4 +1,4 @@
-
+/*
 let playerScore = 0;
 let computerScore = 0;
 
@@ -60,3 +60,5 @@ if (playerScore == 5){
 } else{
     console.log("Unlucky, the computer has defeated you!");
 }
+*/
+
