@@ -61,4 +61,5 @@ if (playerScore == 5){
     console.log("Unlucky, the computer has defeated you!");
 }
 */
-
+/*let round = 0;
+document.getElementById("roundCount").innerHTML = "Round: " + round;*/

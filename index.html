@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <title>Evolution of Combat</title>
 </head>
@@ -16,9 +16,20 @@
     <div class = "content">
         <h3>Melee beats Ranged | Ranged beats Magic | Magic beats Melee</h3>
         <div class = "weaponImages">
-            <a id = "melee"><img src="images/melee.png"></a>
-            <a id = "ranged"><img src="images/ranged.png"></a>
-            <a id = "magic"><img src="images/magic.png"></a>
+            <a id = "melee"><img src="images/melee.png"/></a>
+            <a id = "ranged"><img src="images/ranged.png"/></a>
+            <a id = "magic"><img src="images/magic.png"/></a>
+        </div>
+        <div class="roundStats">
+            <div class = "computersWeapon">
+                <p>Enemy's Weapon</p>
+                <img id = "computersWeaponImg" src = "images/skull.png"/>
+            </div>
+            <div class = "stats">
+                <p id = "roundCount"></p>
+                <p id = "livesCount"></p>
+                <p id = "roundDesc"></p>
+            </div>
         </div>
     </div>
     <div class="footer">
