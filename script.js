@@ -68,3 +68,38 @@ let computerLives = 5;
 document.getElementById("roundCount").innerHTML = "Round: " + round;
 document.getElementById("livesCount").innerHTML = "Your Lives: " + playerLives + " | Enemy's Lives: " + computerLives;
 document.getElementById("roundDesc").innerHTML = "Try me if you dare!";
+
+function computerTurn() {
+    let options = ["melee", "ranged", "magic"];
+    return (choice = options[Math.floor(Math.random()*3)]);
+}
+
+function playRound(playerChoice, computerChoice) {
+    if (playerChoice == "melee" && computerChoice == "ranged") {
+        document.getElementById("roundDesc").innerHTML = "Impressive attack! the enemy lost one life, Ranged is no match for Melee";
+        computerLives--;
+    } else if (playerChoice == "melee" && computerChoice == "magic") {
+        document.getElementById("roundDesc").innerHTML = "Unfortunate defeat.. You lost one life, Melee is no match for Magic";
+        playerLives--;
+    }
+
+    if (playerChoice == "ranged" && computerChoice == "magic") {
+        document.getElementById("roundDesc").innerHTML = "Impressive attack! the enemy lost one life, Magic is no match for Ranged";
+        computerLives--;
+    } else if (playerChoice == "ranged" && computerChoice == "melee") {
+        document.getElementById("roundDesc").innerHTML = "Unfortunate defeat.. You lost one life, Ranged is no match for Melee";
+        playerLives--;
+    }
+
+    if (playerChoice == "magic" && computerChoice == "melee") {
+        document.getElementById("roundDesc").innerHTML = "Impressive attack! the enemy lost one life, Melee is no match for Magic";
+        computerLives--;
+    } else if (playerChoice == "magic" && computerChoice == "ranged") {
+        document.getElementById("roundDesc").innerHTML = "Unfortunate defeat.. You lost one life, Magic is no match for Ranged";
+        playerLives--;
+    }
+
+    if (playerChoice === computerChoice) {
+        document.getElementById("roundDesc").innerHTML = "Hmm.. You and your enemy drew the same weapon, so no lives were lost. Try again!";
+    }
+}
