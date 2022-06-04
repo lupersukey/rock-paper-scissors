@@ -116,7 +116,18 @@ function choseWinner() {
         document.getElementById("melee").style.pointerEvents = "none";
         document.getElementById("ranged").style.pointerEvents = "none";
         document.getElementById("magic").style.pointerEvents = "none";
+        resetGame();
     }
+}
+
+function resetGame() {
+    const fightAgain = document.querySelector(".fightAgain");
+    const resetBtn = document.createElement("button");
+    resetBtn.innerText = "Fight again?";
+    fightAgain.appendChild(resetBtn);
+    resetBtn.addEventListener("click", () => {
+        location.reload();
+    })
 }
 
 const buttons = document.querySelectorAll("a");

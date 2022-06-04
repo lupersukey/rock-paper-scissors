@@ -78,3 +78,24 @@ img {
     display: flex;
     justify-content: center;
 }
+
+.fightAgain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    padding: 14px 40px;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 3px;
+    transition: 0.3s;
+    font-family: "Macondo", cursive;
+}
+
+button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: black;
+}
